@@ -1,0 +1,39 @@
+/* Yamin Webapp base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+  color: #2c3e50;
+}
+.container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+h1, h2 {
+  margin-top: 0;
+  color: #1f3a5f;
+}
+nav ul { list-style: none; padding: 0; margin: 0 0 1rem 0; display:flex; gap:1rem; }
+nav a { color: #276fbf; text-decoration: none; font-weight: 600; }
+a.btn, .btn { display:inline-block; padding:0.35rem 0.75rem; background:#2ecc71; color:#fff; border-radius:4px; text-decoration:none; }
+table { width:100%; border-collapse: collapse; margin-top:0.75rem; }
+table th, table td { padding:0.6rem 0.75rem; border:1px solid #e6e9ef; text-align:left; }
+table th { background:#f2f4f8; color:#233; }
+form label { display:block; margin:0.55rem 0; }
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
+  width:100%; max-width:480px; padding:0.5rem; border:1px solid #d0d7e0; border-radius:4px; box-sizing:border-box;
+}
+button { padding:0.5rem 0.9rem; border-radius:4px; background:#276fbf; color:#fff; border:none; cursor:pointer; }
+button:hover { background:#155da8; }
+.small { font-size:0.9rem; color:#666; }
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .container { margin: 1rem; padding: 1rem; }
+  nav ul { flex-direction: column; gap: 0.5rem; }
+}

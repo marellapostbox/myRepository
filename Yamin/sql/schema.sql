@@ -1,0 +1,30 @@
+-- Create database and tables for Yamin app
+CREATE DATABASE IF NOT EXISTS yamin;
+USE yamin;
+
+CREATE TABLE IF NOT EXISTS batches (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  timing VARCHAR(255),
+  trainer VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS participants (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  batch_id INT,
+  FOREIGN KEY (batch_id) REFERENCES batches(id) ON DELETE SET NULL
+);
+
+-- Example admin (not stored in DB in this demo)
+
+CREATE TABLE IF NOT EXISTS admins (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(45) NOT NULL,
+  username VARCHAR(150) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  role VARCHAR(50) DEFAULT 'ADMIN',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
